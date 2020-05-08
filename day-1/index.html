@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Development Environment Setup</title>
+    <link
+      rel="shortcut icon"
+      href="https://teckat.com/favicon.ico"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #f6f6ff;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'PT Serif', serif;
+      }
+      .icon {
+        width: 24px;
+      }
+      .link:hover {
+        text-decoration: none;
+      }
+      sub {
+        font-size: xx-small;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- introduction -->
+    <section class="container">
+      <h1 class="text-center py-3">Welcome To Javascript <sub>01</sub></h1>
+      <div class="text-center">
+        <a
+          href="https://github.com/InSantoshMahto"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="link"
+        >
+          Follow Me On
+          <img class="icon" src="https://github.com/favicon.ico" alt="Github" />
+          Github
+        </a>
+      </div>
+    </section>
+
+    <section class="container">
+      <code>let`s write today code.</code>
+    </section>
+
+    <!-- you have to write all javascript inside the script tag -->
+    <script>
+      /**
+       * *********************************
+       * *VARIABLES
+       * **********************************
+       * */
+      // declare the variable into javascript
+      let name;
+      let age;
+      let isIndian;
+
+      let studentName, studentAge;
+
+      // store the data into variable
+      name = 'santosh';
+      age = 22;
+      isIndian = true;
+
+      // declaring and initializing
+      let companyName = 'Teckat';
+      let companyAddress = 'Jamshedpur',
+        companyState = 'Jharkhand';
+
+      // js : are option
+
+      /**
+       * *********************************
+       * *CONSTANT
+       * **********************************
+       * */
+      const DEVELOPER = 'SANTOSH';
+      const EDITOR = 'VSCODE';
+      const GITHUB_ID = 'insantoshmahto';
+
+      function sayHello() {
+        if (true) {
+          console.log('block scope');
+          var name = 'me'; // * not recommend to var key word any more prefer to use let.
+          let myAge = 25;
+          console.log('name ->', name);
+          console.log('myAge ->', myAge);
+
+          console.log(name + myAge); // me29
+          console.log(name + ' ' + myAge); // me 29
+          console.log(`my name is ${name} and i am ${age} year old.`);
+        }
+        console.log('function scope');
+        console.log('name ->', name);
+        // console.log('myAge ->', myAge);
+      }
+      sayHello();
+      // GITHUB_ID = 56;
+
+      /**
+       * * variable must not start with number or any special characters except _ and $;
+       * */
+    </script>
+  </body>
+</html>

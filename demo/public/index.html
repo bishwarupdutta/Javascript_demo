@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome To Javascript</title>
+    <link
+      rel="shortcut icon"
+      href="https://teckat.com/favicon.ico"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #f6f6ff;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'PT Serif', serif;
+      }
+      .icon {
+        width: 24px;
+      }
+      .link:hover {
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- introduction -->
+    <section class="container">
+      <h1 class="text-center py-3">Welcome To Javascript</h1>
+      <div class="text-center">
+        <a
+          href="https://github.com/InSantoshMahto"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="link"
+        >
+          Follow Me On
+          <img class="icon" src="https://github.com/favicon.ico" alt="Github" />
+          Github
+        </a>
+      </div>
+    </section>
+
+    <section class="jumbotron">
+      <div class="row">
+        <div class="col-12 col-6 offset-lg-3">
+          <form>
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                aria-describedby="emailHelp"
+              />
+              <small id="emailHelp" class="form-text text-muted"
+                >We'll never share your email with anyone else.</small
+              >
+            </div>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name" />
+            </div>
+            <div class="form-group">
+              <label for="name">message</label>
+              <textarea
+                name="message"
+                id="message"
+                class="form-control"
+                cols="30"
+                rows="3"
+              ></textarea>
+            </div>
+          </form>
+          <div class="text-center">
+            <button
+              type="button"
+              onclick="sendContactData()"
+              class="btn btn-primary px-5"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      'use script';
+      console.log('Welcome To Javascript');
+      fetch('/ping').then((res) => {
+        res.json().then((res) => {
+          console.log('res', res);
+        });
+      });
+
+      function sendContactData() {
+        // collect the form data
+        const name = document.querySelector('#name');
+        const email = document.querySelector('#email');
+        const message = document.querySelector('#message');
+
+        // prepare payload for api
+        const payload = {
+          name: name.value,
+          email: email.value,
+          message: message.value,
+        };
+
+        fetch('http://localhost:8080/contact', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json;charset=utf-8',
+          },
+          body: JSON.stringify(payload),
+        }).then((res) => {
+          res.json().then((res) => {
+            console.log(res);
+          });
+        });
+      }
+    </script>
+  </body>
+</html>
